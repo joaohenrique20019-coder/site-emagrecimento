@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitLife - Emagrecimento Saudável</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+header {
+    background-color: #27ae60;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+}
+nav {
+    margin-top: 10px;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.banner {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+h2 {
+    color: #27ae60;
+    margin-bottom: 20px;
+}
+section {
+    margin-bottom: 50px;
+}
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+button {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #219150;
+}
+input, select {
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.resultado {
+    font-weight: bold;
+    margin-top: 10px;
+}
+footer {
+    background-color: #27ae60;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+.produto {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+.produto img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.produto:hover {
+    transform: scale(1.05);
+}
+.preco {
+    color: #27ae60;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.macro {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+.muted {
+    color: #777;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>FitLife</h1>
+    <p>Emagrecimento saudável e produtos para sua jornada fitness</p>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#produtos">Produtos</a>
+    </nav>
+</header>
+
+<!-- Banner -->
+<div class="banner">
+  <a href="https://go.hotmart.com/V102138073X?dp=1" target="_blank">
+    <img src="https://sdmntpreastus2.oaiusercontent.com/files/00000000-d844-61f6-874c-d42f40846e8b/raw?se=2025-09-28T20%3A58%3A55Z&sp=r&sv=2024-08-04&sr=b&scid=2a975336-18f1-5d71-8078-9eb600d9cb41&skoid=b0fd38cc-3d33-418f-920e-4798de4acdd1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-28T13%3A13%3A33Z&ske=2025-09-29T13%3A13%3A33Z&sks=b&skv=2024-08-04&sig=6gNbCEIKODvCRFqZuFujFeWdwujwqds1e8SPgoa6sA4%3D" alt="Banner de Emagrecimento" width="728" height="90">
+  </a>
+</div>
+
+<div class="container">
+    <!-- Sobre -->
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <div class="card">
+            <p>Na <strong>FitLife</strong>, acreditamos que emagrecer é mais do que perder peso — é conquistar saúde, energia e autoestima. 
+            Aqui você encontra dicas, ferramentas e produtos que ajudam a transformar seu estilo de vida de forma saudável e sustentável.</p>
+        </div>
+    </section>
+
+    <!-- Calculadora -->
+    <section id="calculadora">
+        <h2>Calculadora de Calorias e Macronutrientes</h2>
+        <div class="card">
+            <label for="sexo">Sexo:</label>
+            <select id="sexo">
+                <option value="homem">Homem</option>
+                <option value="mulher">Mulher</option>
+            </select>
+
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" placeholder="Ex: 30">
+
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" placeholder="Ex: 70">
+
+            <label for="altura">Altura (cm):</label>
+            <input type="number" id="altura" placeholder="Ex: 170">
+
+            <label for="atividade">Nível de atividade:</label>
+            <select id="atividade">
+                <option value="1.2">Sedentário</option>
+                <option value="1.375">Levemente ativo</option>
+                <option value="1.55">Moderadamente ativo</option>
+                <option value="1.725">Muito ativo</option>
+                <option value="1.9">Extremamente ativo</option>
+            </select>
+
+            <label for="objetivo">Objetivo:</label>
+            <select id="objetivo">
+                <option value="deficit">Perder peso</option>
+                <option value="manter">Manter peso</option>
+                <option value="superavit">Ganhar peso</option>
+            </select>
+
+            <button id="calcularBtn">Calcular</button>
+
+            <div id="results" style="display:none; margin-top:20px;">
+                <p id="bmrRes"></p>
+                <p id="tdeeRes"></p>
+                <p id="metaRes"></p>
+                <h3>Distribuição de Macronutrientes:</h3>
+                <div id="macroList"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos">
+        <h2>Produtos em Destaque</h2>
+        <div class="produtos-grid">
+            <div class="produto">
+                <img src="https://static-media.hotmart.com/IZ77JXgDVdGzQmCiIzsEnnzOYBA=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/4b83b18b-f4f4-4309-8513-14631b9b9fce/ua99356.jpg?w=920" alt="Produto 1">
+                <h3>30 Chás que emagrece</h3>
+                <p class="preco">R$ 29,90</p>
+                <a href="https://go.hotmart.com/E102137895N?dp=1" target="_blank">
+                    <button>Comprar</button>
+                </a>
+            </div>
+            <div class="produto">
+                <img src="https://static-media.hotmart.com/XojHGRgWbgIIiRd16hah-mDnlwI=/filters:background_color(white)/hotmart/product_pictures/4f8d88e0-39a4-410f-b0ed-c030b3646b72/emagilbasenovaembalagememaup30frentealta.jpeg" alt="Produto 2">
+                <h3>Ema UP 30 Cápsulas</h3>
+                <p class="preco">R$ 63,05</p>
+                <a href="https://go.hotmart.com/V102138073X?dp=1" target="_blank">
+                    <button>Comprar</button>
+                </a>
+            </div>
+            <div class="produto">
+                <img src="https://static-media.hotmart.com/2dGqambp_QlbGt6tnefK_MCHOSM=/filters:background_color(white)/hotmart/product_pictures/9f68d43f-8509-4cae-a066-7ae8b590c750/POSTSDEFINITION17.png"
+                                   alt="Produto 3">
+                <h3>Kit Barrinhas Saudáveis</h3>
+                <p class="preco">R$ 59,90</p>
+                <a href="https://go.hotmart.com/G102138199C?dp=1" target="_blank">
+                    <button>Comprar</button>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 2025 FitLife - Emagrecimento Saudável</p>
+</footer>
+
+<script>
+/* Script da Calculadora Avançada */
+const el = id => document.getElementById(id);
+function formatNum(n){ return Math.round(n); }
+
+document.getElementById('calcularBtn').addEventListener('click', ()=> {
+  const sexo = el('sexo').value;
+  const idade = parseFloat(el('idade').value) || 0;
+  const peso = parseFloat(el('peso').value) || 0;
+  const altura = parseFloat(el('altura').value) || 0;
+  const atividade = parseFloat(el('atividade').value) || 1.2;
+  const objetivo = el('objetivo').value;
+
+  if(idade<=0 || peso<=0 || altura<=0){
+    alert('Preencha idade, peso e altura corretamente.');
+    return;
+  }
+
+  // BMR
+  let bmr;
+  if(sexo === 'homem') bmr = 10*peso + 6.25*altura - 5*idade + 5;
+  else bmr = 10*peso + 6.25*altura - 5*idade - 161;
+
+  // TDEE
+  const tdee = bmr * atividade;
+
+  // Meta
+  let meta;
+  if(objetivo === 'deficit'){ meta = tdee * 0.8; }
+  else if(objetivo === 'manter'){ meta = tdee; }
+  else { meta = tdee + 300; }
+
+  // Macronutrientes
+  const proteina_g = 1.8 * peso;
+  const proteina_kcal = proteina_g * 4;
+  const gordura_kcal = meta * 0.25;
+  const gordura_g = gordura_kcal / 9;
+  const carbs_kcal = meta - (proteina_kcal + gordura_kcal);
+  const carbs_g = carbs_kcal / 4;
+
+  // Exibir
+  el('bmrRes').innerText = `BMR (repouso): ${formatNum(bmr)} kcal/dia`;
+  el('tdeeRes').innerText = `TDEE (gasto total estimado): ${formatNum(tdee)} kcal/dia`;
+  el('metaRes').innerText = `Meta diária sugerida: ${formatNum(meta)} kcal/dia`;
+
+  const macroList = el('macroList');
+  macroList.innerHTML = `
+    <div class="macro"><div class="muted">Proteína</div><div>${formatNum(proteina_g)} g</div></div>
+    <div class="macro"><div class="muted">Gordura</div><div>${formatNum(gordura_g)} g</div></div>
+    <div class="macro"><div class="muted">Carboidrato</div><div>${formatNum(carbs_g)} g</div></div>
+  `;
+
+  el('results').style.display = 'block';
+});
+</script>
+
+</body>
+</html>
